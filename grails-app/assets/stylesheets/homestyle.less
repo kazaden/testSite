@@ -1,0 +1,72 @@
+//import of the less file corresponding to the layout
+@import "mainstyle.less";
+
+@secondary-div-width: 1100px;
+
+/* TODO: testing percentage width 
+on secondary divs, to incorporate in mainstyle if needed */
+.secondary-div{
+	.row {
+		.div-centered();
+	}
+}
+
+/*** Selection zone ***/
+.sub-secondary-div {
+	.div-centered();
+	
+	.custom-col {
+		margin-top: 6px;
+		margin-bottom: 6px;
+	}
+}
+
+#principal {
+	padding-top: 0px;
+}
+
+
+#top-reinsurance-zone {
+	padding-bottom: 60px;
+
+	.reinsurance-vignette {
+		
+		text-align: center;
+		
+		&.yellow {
+			background: @pastel-yellow;
+			
+			.reinsurance-title {
+				color: white;
+			}
+		}
+		
+		&.grey {
+			background: @most-lighter-grey;
+			
+			.reinsurance-title {
+				color: @yellow;
+			}
+		}
+		
+		.reinsurance-title {
+			font-size: 24px;
+			font-weight: 700;
+			padding: 30px 10px 10px 10px;
+		}
+		
+		.reinsurance-content {
+			font-size: 14px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: @darkerer-grey;
+			padding: 5px 20px 15px 20px;
+		}
+		
+		.picto {
+			margin-bottom: 15px;
+			/* width: 35px;
+			height: auto; */
+		}
+	}
+}

@@ -1,0 +1,747 @@
+//import of bootstrap
+@import "bootstrap/bootstrap.less";
+@import "font-awesome-4.3.0/font-awesome.less";
+@import "flexbox.less";
+@import "jquery-ui/jquery-ui-1.10.4.custom.less";
+
+//Definition of LESS constants and classes
+
+//Definition of the images URL
+@img-path: "../images/mainstyle";
+
+//Definition of the fonts URL
+@fonts-path: "../fonts";
+
+//definition of the main color set
+@white: #FFFFFF;
+
+@pastel-yellow: #ffc666;
+@lighter-yellow: #ffd577;
+@light-yellow: #f0a339;
+@yellow: #ffae3b;
+@dark-yellow: #ff9f15;
+
+@pastel-blue: #3498db;
+@lighter-blue: #496d85;
+@light-blue: #18445d;
+@dark-blue: #0e3c56;
+@darker-blue: #09354e;
+
+@most-lighter-grey: #f5f5f5;
+@lighter-grey: #f0f0f0;
+@light-grey: #e4e4e4;
+//@light-grey: #d4d4d4;
+@dark-grey: #cfcfcf;
+@darker-grey: #a1a1a1;
+@darkerer-grey: #7d7873;
+@most-darker-grey: #474747;
+
+//@lighter-black: #5c5c5c;
+@light-black: #2e2d2b;
+@dark-black: #1d1d1b;
+@true-black: #000000;
+
+@pastel-red: #e74c3c;
+@lighter-red: #fdcccc;
+@light-red: #fb9d9d;
+@dark-red: #cd0100;
+
+@fluo-green: #36cc2f;
+
+@transparent-lighter-grey: rgba(228, 228, 228, 0.5);
+@transparent-darker-grey: rgba(161, 161, 161, 0.5);
+@transparent-black: rgba(0, 0, 0, 0.2);
+@transparent-pastel-blue: rgba(52, 152, 219, 0.05);
+@transparent-light-blue: rgba(24, 68, 93, 0.5);
+@transparent-darker-blue: rgba(9, 53, 78, 0.9);
+@transparent-pastel-red: rgba(231, 76, 60, 0.1);
+
+@background-color: @most-lighter-grey;
+//#EBEBEB;
+//#F6F2EE
+//F6F2EC
+
+// media query size for micro screens
+@screen-micro: 500px;
+
+/** Menu header **/
+@header-padding-top: 5px;
+@header-border-bottom: 2px;
+@main-menu-height: 65px;
+
+/*** Breadcrumb ***/
+@breadcrumb-color: @darker-grey;
+
+/*** Search bar ***/
+
+@search-bar-width: 850px;
+@search-bar-height: 53px;
+@sport-search-bar-width: 413px;
+@icon-search-bar-width: 55px;
+
+/*** Checkbox ***/
+@checkbox-width: 18px;
+
+@date-picker-icon-width: 36px;
+
+///////////////////////////////////
+
+/*** FONTS IMPORT ***/
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 300;
+	src: local("Open Sans Light"),
+	local("OpenSans-Light"),
+	url("@{fonts-path}/OpenSans-Light.ttf") format("woff");
+}
+
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Open Sans"),
+	local("OpenSans"),
+	url("@{fonts-path}/OpenSans-Regular.ttf") format("woff");
+}
+
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	src: local("Open Sans Bold"),
+	local("OpenSans-Bold"),
+	url("@{fonts-path}/OpenSans-Bold.ttf") format("woff");
+}
+
+@font-face{
+	font-family: "Neucha";
+	font-style:normal;
+	font-weight: 300;
+	src: url("@{fonts-path}/neucha.eot");
+	src: local("Neucha"),
+	url("@{fonts-path}/neucha.woff") format("woff")
+	url("@{fonts-path}/Neucha.ttf") format("truetype");
+}
+/** Fontawesome & Zocial icon fonts **/
+
+//fonts
+//@font-one: Helvetica;
+//@font-one: 'Source Sans Pro', sans-serif;
+//@font-one: 'Lato', sans-serif;
+//@font-one: 'Roboto', sans-serif;
+@font-two: 'Neucha', cursive;
+//@font-one: 'Alegreya Sans', sans-serif;
+@font-one: 'Open Sans', sans-serif;
+
+///////////////////////////////////
+
+//fonts colors
+@font-menu-color: @white;
+@font-menu-color-hover: @yellow;
+@font-serach-bar-color: @darker-grey;
+@font-go-button-color: @white;
+@font-serach-bar-hover-color: @yellow;
+///////////////////////////////////
+
+//Main elements size
+@main-zone-max-width: 1280px;
+@main-slider-height: 383px;
+@secondary-div-width: 942px;
+@max-menu-footer-width: @screen-md-min;
+@space-between-elements-horizontally: 4px;
+///////////////////////////////////
+
+// Abstract class .border-radius with optional parameter with default value
+
+//abstract class to set the border radius of an element, default value = 5px
+.border-radius(@radius: 5px) {
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.border-radius(@radius-top-left, @radius-top-right, @radius-bottom-right, @radius-bottom-left) {
+	-moz-border-radius: @radius-top-left @radius-top-right @radius-bottom-right @radius-bottom-left;
+	-webkit-border-radius: @radius-top-left @radius-top-right @radius-bottom-right @radius-bottom-left;
+	border-radius: @radius-top-left @radius-top-right @radius-bottom-right @radius-bottom-left;
+}
+
+
+// linear-gradient mixin to support the property on
+// webkit based browser (android browser & old iOS Safari)
+
+.background-linear-gradient(@angle, @color-orig, @percent-orig, @color-final, @percent-final){
+	background: linear-gradient(@angle, @color-orig @percent-orig, @color-final @percent-final);
+	background: -webkit-linear-gradient(@angle, @color-orig @percent-orig, @color-final @percent-final);
+}
+
+.background-linear-gradient(@angle, @color1, @color2, @color3, @percent1, @percent2){
+	background: linear-gradient(@angle, @color1 @percent1, @color2 @percent1, @color2 @percent2, @color3 @percent2);
+	background: -webkit-linear-gradient(@angle, @color1 @percent1, @color2 @percent1, @color2 @percent2, @color3 @percent2);
+}
+
+.background-linear-gradient(@angle, @color-orig, @color-final){
+	background: linear-gradient(@angle, @color-orig, @color-final);
+	background: -webkit-linear-gradient(@angle, @color-orig, @color-final);
+}
+
+//abstract class to center a div horizontaly
+.div-centered() {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//abstract class for applying a grey box-shadow on div on bottom and right, defaut width = 4px, color = transparent-lighter-grey
+.bottom-right-box-shadow(@width: 4px, @color: @transparent-lighter-grey) {
+	-moz-box-shadow: @width @width 0px 0px @color;
+	-webkit-box-shadow: @width @width 0px 0px @color;
+	box-shadow: @width @width 0px 0px @color;
+}
+
+//abstract class for applying a grey box-shadow on div on bottom and left, defaut width = 1px, color = transparent-lighter-grey
+.bottom-left-box-shadow(@width: 1px, @color: @transparent-lighter-grey) {
+	-moz-box-shadow: -@width @width 0px 0px @color;
+	-webkit-box-shadow: -@width @width 0px 0px @color;
+	box-shadow: -@width @width 0px 0px @color;
+}
+
+.box-shadow(@width: 1px, @color: @transparent-lighter-grey) {
+	-moz-box-shadow: @width @width 0px 0px @color;
+	-webkit-box-shadow: @width @width 0px 0px @color;
+	box-shadow: @width @width 0px 0px @color;
+}
+
+.box-sizing(@box-sizing) {
+	-webkit-box-sizing: @box-sizing;
+    -moz-box-sizing: @box-sizing;
+    box-sizing: @box-sizing;
+}
+
+//abstract class for fonts styling
+.main-font {
+	font-family: @font-one;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+//abstract classes for rating taglib
+
+.rating-icon.active{
+	color: @dark-yellow;
+}
+
+.rating-icon.inactive{
+	color: @dark-grey;
+}
+
+//abstract class for show div/button
+.show-button-blue(@height) {
+	@bg-color-1: @dark-blue;
+	@bg-color-2: @light-blue;
+
+	.background-linear-gradient(45deg, @bg-color-1, 50%, @bg-color-2, 50%);
+	.border-radius(2px);
+	.bottom-right-box-shadow(1px, @transparent-black);
+	color: @white;
+	height: @height;
+	line-height: @height;
+	padding-left: 8px;
+	padding-right: 8px;
+	font-weight: 400;
+
+	.flexbox();
+	.flex-direction( row);
+	.justify-content( space-between);
+	.align-items( center);
+
+	cursor: pointer;
+
+	&:hover {
+		.background-linear-gradient(45deg, darken(@bg-color-1, 5%), 50%, darken(@bg-color-2, 5%), 50%);
+	}
+}
+
+.show-button-yellow(@height) {
+	@bg-color-1: @dark-yellow;
+	@bg-color-2: @yellow;
+
+	.show-button-blue(@height);
+
+	.background-linear-gradient(45deg, @dark-yellow, 50%, @yellow, 50%);
+
+	&:hover {
+		.background-linear-gradient(45deg, darken(@bg-color-1, 5%), 50%, darken(@bg-color-2, 5%), 50%);
+	}
+}
+
+/** Abstract class for customizing the style of an input placeholder, default italic and light-grey **/
+.custom-placeholder(@fontstyle: italic, @fontcolor: @darker-grey) {
+	::-webkit-input-placeholder {font-style: @fontstyle; color: @fontcolor;}
+	:-moz-placeholder {font-style: @fontstyle; color: @fontcolor;}
+	::-moz-placeholder {font-style: @fontstyle; color: @fontcolor;}
+	:-ms-input-placeholder {font-style: @fontstyle; color: @fontcolor;}
+}
+
+.text-overflow-ellipsis() {
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* pour Opera 9 */
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+//END of LESS constants and classes
+///////////////////////////////////
+
+/*** Quick use of button style ***/
+
+/** Overriding Bootstrap default button style **/
+.btn {
+	.border-radius(2px);
+	.bottom-right-box-shadow(1px, @transparent-black);
+
+	.background-linear-gradient(45deg, @dark-blue, 50%, @light-blue, 50%);
+
+	color: @white;
+	font-weight: 400;
+
+	padding-left: 15px;
+	padding-right: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+
+	border: transparent;
+
+	&:hover, &:focus {
+		.background-linear-gradient(45deg, darken(@dark-blue, 5%), 50%, darken(@light-blue, 5%), 50%);
+		color: white;
+		
+		text-decoration: none;
+		a {
+			color: @white;
+			text-decoration: none;
+		}
+	}
+	
+	&.green {
+		.background-linear-gradient(45deg, darken(@fluo-green, 5%), 50%, @fluo-green, 50%);
+	}
+
+	&.yellow {
+		.background-linear-gradient(45deg, @dark-yellow, 50%, @yellow, 50%);
+	}
+
+	&.red {
+		.background-linear-gradient(45deg, darken(@dark-red, 5%), 50%, @dark-red, 50%);
+	}
+
+	&.hover-green {
+		&:hover {
+			.background-linear-gradient(45deg, darken(@fluo-green, 5%), 50%, @fluo-green, 50%);
+		}
+	}
+
+	&.hover-yellow:hover {
+		&:hover {
+			.background-linear-gradient(45deg, @dark-yellow, 50%, @yellow, 50%);
+		}
+	}
+
+	&.hover-red {
+		&:hover {
+			.background-linear-gradient(45deg, darken(@dark-red, 5%), 50%, @dark-red, 50%);
+		}
+	}
+}
+
+/*** Abstract class for customizing buttons ***/
+.custom-button(@btn-color-1: @dark-blue, @btn-color-2: @light-blue, @btn-height: 25px, @btn-width: auto) {
+	.background-linear-gradient(45deg, @btn-color-1, 50%, @btn-color-2, 50%);
+
+	color: @white !important;
+	
+	width: @btn-width;
+
+	font-size: 16px;
+	font-weight: 700;
+
+	div {
+		height: @btn-height;
+		line-height: @btn-height;
+	}
+
+}
+
+/*** Abstract class for customizing buttons ***/
+.custom-button(@btn-color-1: @dark-blue, @btn-color-2: @light-blue, @btn-height: 25px, @btn-width: auto) {
+	.background-linear-gradient(45deg, @btn-color-1, 50%, @btn-color-2, 50%);
+
+	color: white !important;
+
+	width: @btn-width;
+
+	font-size: 16px;
+	font-weight: 700;
+
+	div {
+		height: @btn-height;
+		line-height: @btn-height;
+	}
+}
+
+a, a:link, a:visited, a:hover {
+	&.custom-button {
+		color: white !important;
+	}
+}
+
+
+/*** END Quick use of button style ***/
+
+/*** START booking demand modal box ***/
+
+/*
+@media (min-width: 1310px) {
+	.container {
+		width: 1310px;
+	}
+}*/
+
+.container {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*** Surcharge of h1 h2 h3 h4 ***/
+h1, H2, h3, h4 {
+	margin: 0px;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: 300;
+}
+
+body {
+	.main-font;
+}
+
+/***  Main menu bar ***/
+header {
+	.background-linear-gradient(36deg, @dark-blue, 50%, @light-blue, 50%);
+	border-bottom: solid @header-border-bottom @light-grey;
+	padding-top: @header-padding-top;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#logo-menu {
+	margin-top: 8px;
+}
+
+#navbar-container{
+	/*.flexbox()
+	.flex-direction( row);
+	.flex-wrap( nowrap);
+	.justify-content(space-between);*/
+}
+
+#main-menu {
+
+	height: @main-menu-height;
+
+	background: none;
+
+	border: none;
+
+	.border-radius(0px);
+
+	max-width: @max-menu-footer-width;
+
+	.div-centered();
+
+	margin-bottom: 0px;
+
+	.navbar-nav > li > a {
+		color: @font-menu-color;
+		padding-bottom: 20px;
+
+		&:hover, &:focus {
+			color: @font-menu-color-hover;
+			border-bottom: solid 2px @font-menu-color-hover;
+		}
+	}
+}
+
+
+.header-dropdown{
+	display:none;
+	.flex-direction(column);
+	position: absolute;
+	background-color: @transparent-darker-blue;
+	right: auto;
+
+	li{
+		position: relative;
+		height:35px;
+
+		a{
+			position: relative;
+			height:30px;
+			color: @white;
+
+			.header-dropdown-inner{
+				position: absolute;
+
+				img{
+					max-height: 100%;
+					margin-top: auto;
+					margin-bottom: auto;
+				}
+			}
+
+		}
+
+		a:hover{
+			background-color: @light-grey;
+			color: @dark-yellow;
+		}
+	}
+}
+
+.sports-dropdown-item{
+	a{
+
+		span.capitalize{
+			position: absolute;
+			left:70px;
+			line-height: 30px;
+		}
+		.sport-dropdown-text{
+			padding-left: 30px;
+		}
+	}
+}
+
+
+#sports-dropdown-link:hover #sports-dropdown-container, #sports-dropdown-container:hover{
+	.flexbox();
+}
+
+#ambassadors-dropdown-link:hover{
+	#ambassadors-dropdown-container{
+		.flexbox();
+	}
+}
+
+.main-menu-link {
+	margin-top: 8px;
+	margin-left: 15px;
+
+	font-weight: 700;
+	font-size: 13px;
+}
+
+.main-menu-link:hover{
+	.dropdown-toggle{
+		color: @dark-yellow;
+		border-bottom: 2px solid @dark-yellow;
+	}
+}
+
+.main-menu-tel-line {
+	margin-top: 17px;
+	margin-left: 5px;
+}
+
+.main-menu-tel-zone {
+	.flexbox();
+	font-weight: 400;
+	font-size: 18px;
+	color: @white;
+	text-transform: uppercase;
+	
+	/* &:hover {
+		color: @dark-yellow;
+	} */
+	
+	.picto {
+		font-size: 24px;
+		margin-right: 5px;
+	}
+}
+
+.main-menu-button {
+	width: 94px;
+	height: 27px;
+	line-height: 27px !important;
+	text-align: center;
+
+	padding: 0px !important;
+	display: block !important;
+
+	margin-top: 1.5px;
+	margin-bottom: 1.5px;
+	margin-left: 20px;
+
+	.bottom-right-box-shadow(1px, @transparent-black);
+
+	font-weight: 400;
+	font-size: 10px;
+
+	&:hover, &:focus {
+		color: @yellow;
+		text-decoration: none !important;
+	}
+
+	a:hover, a:focus {
+		color: @yellow;
+		text-decoration: none !important;
+	}
+}
+
+.main-menu-button > a {
+	color: @font-menu-color;
+}
+
+/*** Main Zone ***/
+#principal {
+	padding-top: 10px;
+	padding-bottom: 4px;
+	padding-left: 0px;
+	padding-right: 0px;
+	//background: url("@{img-path}/bg_principal.jpeg") repeat;
+	background: @background-color;
+	
+	.sub-principal {
+		&.white-bg {
+			background: white;
+		}
+	}
+}
+
+/***  Secondary div ***/
+@max-col-width: 313px;
+@icon-secondary-div-width: 55px;
+@icon-secondary-div-height: 53px;
+@icon-secondary-div-left-pos: -4px;
+
+@small-icon-secondary-div-width: 37px;
+@small-icon-secondary-div-height: 35px;
+
+//elements borders
+@elements-std-border-width: 4px;
+@elements-std-border-color: @lighter-grey;
+@elements-std-border: solid @elements-std-border-width @elements-std-border-color;
+
+/* Class css for fast applying the standard border on an element */
+.full-std-border {
+	border: @elements-std-border;
+}
+
+.secondary-div {
+	max-width: @secondary-div-width;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	margin-bottom: 15px;
+	//background: @white;
+
+	//.bottom-right-box-shadow();
+	.div-centered();
+
+	.custom-col {
+		padding-left: @space-between-elements-horizontally;
+		padding-right: @space-between-elements-horizontally;
+		max-width: @max-col-width;
+
+		.div-centered();
+	}
+}
+
+.secondary-div-no-title {
+	padding-top: 0px;
+	padding-bottom: 0px;
+
+	.custom-col {
+		padding-left: @space-between-elements-horizontally;
+		padding-right: @space-between-elements-horizontally;
+		margin-top: 6px;
+		margin-bottom: 6px;
+		max-width: @max-col-width;
+	}
+}
+
+.icon-secondary-div {
+	width: @icon-secondary-div-width;
+	height: @icon-secondary-div-height;
+	.background-linear-gradient(45deg, @dark-blue, 50%, @light-blue, 50%);
+
+	.bottom-left-box-shadow();
+
+	position: absolute;
+	
+	color: white;
+	font-size: 28px;
+	text-align: center;
+
+	p {
+		height: @icon-secondary-div-height;
+		line-height: @icon-secondary-div-height;
+		text-align: center;
+
+		img{
+			width: 90%;
+		}
+	}
+}
+
+.secondary-div-title {
+	text-align: center;
+	color: @dark-blue;
+	position: static;
+	height: auto;
+	line-height: initial;
+	//margin: 15px 5px;
+	
+	h2 {
+		margin: 0;
+		font-size: 28px;
+		line-height: 26px;
+		font-weight: 700;
+
+		.first-line {
+			font-weight: 700;
+		}
+
+		.second-line {
+			font-weight: 300;
+		}
+	}
+	
+	img {
+		margin-bottom: 5px;
+    	margin-right: 10px;
+	}
+	
+	.glyphicon, .fa {
+		color: @dark-blue;
+		margin-right: 10px;
+	}
+}
+
+.secondary-div-img, .vignette-image {
+	border: @elements-std-border;
+	
+	img {
+		width: 100%;
+		height: 100%;
+		
+		// TEST ANDROID BROWSER IMG HEIGHT FIX
+		@media (max-width:@screen-sm){
+			height:auto;
+		}
+	}
+}
+	
+
