@@ -93,11 +93,13 @@ id="locationName" autocomplete="off">
 								</div>
 							</div>
 							<div class="col-sm-2 custom-col">
-								<button class="btn custom-button solid-yellow stretch-width last-elem" type="submit">
-									<span class="">
-										Rechercher
-									</span>
-								</button>
+								<g:link controller="ActivityController" action="activityListBySport">
+									<button class="btn custom-button solid-yellow stretch-width last-elem" type="submit">
+										<span class="">
+											Rechercher
+										</span>
+									</button>
+								</g:link>
 							</div>
 						</div>
 						<div class="row">
