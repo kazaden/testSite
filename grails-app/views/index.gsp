@@ -43,8 +43,7 @@ hors piste" title="ski hors piste">
 			</div>
 			<div id="search-bar-zone">
 				<div id="search-bar" class="secondary-div">
-					<form action="/activityGeneric/searchByLocation" method="get" name="location-sport-search-form" id="location-sport-search-form" 
-novalidate="novalidate">
+					<g:form controller="Activity" >
 						<div class="row">
 							<div class="col-sm-5 custom-col">
 								<div class="autoCompleteDiv custom-form-field with-icon stretch-width first-elem">
@@ -93,13 +92,7 @@ id="locationName" autocomplete="off">
 								</div>
 							</div>
 							<div class="col-sm-2 custom-col">
-								<g:link controller="ActivityController" action="activityListBySport">
-									<button class="btn custom-button solid-yellow stretch-width last-elem" type="submit">
-										<span class="">
-											Rechercher
-										</span>
-									</button>
-								</g:link>
+									<g:submitButton class="btn custom-button solid-yellow stretch-width last-elem" name="ActivitySearch" value="Rechercher" action="activityListBySport"/>
 							</div>
 						</div>
 						<div class="row">
@@ -114,7 +107,7 @@ id="locationName" autocomplete="off">
 							<div class="col-sm-2 custom-col">
 							</div>
 						</div>
-					</form>
+					</g:form>
 				</div>
 			</div>
 		</div>
