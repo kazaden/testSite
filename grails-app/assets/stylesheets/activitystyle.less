@@ -1,0 +1,510 @@
+//import of the less file corresponding to the layout
+@import "mainstyle.less";
+	
+	
+.blank-mask-zone {
+    position: relative;
+}
+	
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+#list-zone {
+    background: #e4e4e4;
+    padding: 15px 25px;
+}
+.vignette {
+    margin-bottom: 10px;
+    width: 100%;
+    background: #FFFFFF;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -o-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+    display: box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    -o-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+}
+
+.vignette .vignette-image, .vignette .vignette-label {
+    border: none;
+}
+
+.vignette .vignette-image {
+    padding-left: 0;
+    padding-right: 0;
+	position: relative;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    -moz-flex: 0 0 auto;
+    -o-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+a {
+    color: #428bca;
+    text-decoration: none;
+	background: transparent;
+}
+.vignette .photo-container {
+    width: 100%;
+}
+.photo-container {
+    position: relative;
+    display: inline-block;
+}
+
+@media (max-width: 768px){
+	.secondary-div-img img, .vignette-image img {
+		height: auto;
+	}
+}
+
+.vignette .vignette-image .photo-container .copyright-photo-zone {
+    z-index: 10;
+}
+
+.photo-container .copyright-photo-zone {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    z-index: 1;
+    font-size: 12px;
+    color: #2e2d2b;
+}
+
+.photo-container .copyright-photo-zone .copyright-photo-text {
+    display: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 16px;
+    padding-left: 4px;
+    padding-right: 2px;
+    background: rgba(228, 228, 228, 0.5);
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+.photo-container .copyright-photo-zone .photo-copyright-symbol {
+    display: block;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    background: rgba(161, 161, 161, 0.5);
+}
+
+.vignette .vignette-img-overlay {
+    transition: none;
+}
+
+.vignette .vignette-img-overlay {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+    display: box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    -o-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    height: 100%;
+    margin-left: -4px;
+    margin-right: -4px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 5%;
+    margin: 0;
+    opacity: 0;
+    background-color: #1d1d1b;
+    transition: all 0.4s ease-in-out;
+    z-index: 5;
+}
+
+.vignette .vignette-img-overlay .vignette-discover-button {
+    transition: none;
+}
+
+.vignette .vignette-img-overlay .vignette-discover-button {
+    color: #FFFFFF;
+    width: 80%;
+    border-color: #ff9f15;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    transform: scale(0.8);
+    transition: all 0.2s ease-in-out;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.menu-info {
+    border: solid 1px #0e3c56;
+    text-align: center;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    font-weight: 400;
+    color: #0e3c56;
+    width: 100%;
+}
+
+.menu-button, .menu-info, .menu-link, .photo-suppr-button {
+    width: 100%;
+    min-height: 40px;
+    height: 40px !important;
+    font-weight: 700;
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -ms-box !important;
+    display: -o-box !important;
+    display: box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: -moz-flex !important;
+    display: -ms-flex !important;
+    display: -o-flex !important;
+    display: flex !important;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -ms-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-box-align: center;
+    -o-box-align: center;
+    box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 5px !important;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.vignette .instructor-portrait {
+    display: block;
+    width: 33%;
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    width: 35%;
+    z-index: 5;
+}
+
+.vignette .instructor-portrait .photo-container {
+    text-align: center;
+}
+
+.vignette .photo-container {
+    width: 100%;
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.vignette .instructor-portrait .photo-container img {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid 2px white;
+    width: 80px;
+    transition: border 0.2s ease-in-out;
+}
+
+@media (max-width: 768px){
+	.secondary-div-img img, .vignette-image img {
+		height: auto;
+	}
+}
+
+.secondary-div-img img, .vignette-image img {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    vertical-align: middle;
+	border: 0;
+}
+
+.vignette.vignette-activity .sport-label {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    background: #ffae3b;
+    padding: 1px 5px;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.vignette .vignette-image, .vignette .vignette-label {
+    border: none;
+}
+
+.vignette-label {
+    background: #FFFFFF;
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    border: solid 4px #f0f0f0;
+    border-top: none;
+    width: 100%;
+    margin-left: 0;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+    -moz-flex: 1 0 auto;
+    -o-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+
+.vignette .vignette-image .activity-name, .vignette .vignette-label .activity-name {
+    width: 65%;
+    min-height: 36px;
+}
+.vignette-label .vignette-label-line .activity-name {
+    font-size: 16px;
+    font-weight: 400;
+}
+h1, H2, h3, h4 {
+    margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+.vignette-label .vignette-label-line a {
+    color: #09354e;
+}
+
+.vignette-label .row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vignette-label .vignette-label-line .activity-instructor-name-location-zone {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+    display: box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    -o-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+}
+.vignette-label .vignette-label-line .custom-col {
+    padding-left: 0px;
+}
+.custom-col {
+    padding: 0;
+}
+.col-xs-8 {
+    width: 66.66666666666666%;
+}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.vignette-label .vignette-label-line .activity-duration-zone {
+    margin-top: 4px;
+}
+.vignette-label .vignette-label-line .activity-duration-zone, .vignette-label .vignette-label-line .activity-location-zone {
+    font-size: 13px;
+    color: #a1a1a1;
+}
+
+.vignette-label .vignette-label-line .activity-duration-zone .fa {
+    color: #09354e;
+    margin-left: 1px;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+.vignette-label .vignette-label-line .activity-duration-zone, .vignette-label .vignette-label-line .activity-location-zone {
+    font-size: 13px;
+    color: #a1a1a1;
+}
+
+.vignette-label .vignette-label-line .activity-location-zone {
+    max-height: 37px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+.vignette-label .vignette-label-line .activity-duration-zone, .vignette-label .vignette-label-line .activity-location-zone {
+    font-size: 13px;
+    color: #a1a1a1;
+}
+
+.vignette-label .vignette-label-line .activity-location-zone .glyphicon, .vignette-label .vignette-label-line .activity-location-zone .fa {
+    color: #ffae3b;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.vignette-label .vignette-label-line .activity-instructor-name-zone {
+    font-size: 13px;
+    color: #09354e;
+    margin-top: 4px;
+}
+
+.vignette-label .vignette-label-line a {
+    color: #09354e;
+}
+
+.vignette-label .vignette-label-line .activity-price-zone {
+    color: #a1a1a1;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.vignette-label .vignette-label-line .activity-price-zone .price-prefix, .vignette-label .vignette-label-line .activity-price-zone .price-suffix {
+    font-size: 11px;
+}
+
+.vignette-label .vignette-label-line .activity-price-zone .price {
+    font-size: 20px;
+}
+
+.vignette-label .vignette-label-line .activity-price-zone .price-suffix {
+    line-height: 11px;
+}
+.vignette-label .vignette-label-line .activity-price-zone .price-prefix, .vignette-label .vignette-label-line .activity-price-zone .price-suffix {
+    font-size: 11px;
+}

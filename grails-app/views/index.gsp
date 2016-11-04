@@ -61,7 +61,7 @@ id="locationName" autocomplete="off">
 									<input type="hidden" name="searchedSportFormattedUrlName" value="" id="searchedSportFormattedUrlName" />
 								</div> -->
 								<div class="custom-form-field with-icon stretch-width">
-									<g:select name="sportName" class="searchedSport" from="${["Ski", "Alpinisme"]}"/>
+									<g:select name="sportName" class="searchedSport" from="${["Ski", "Parapente"]}"/>
 									<i class="fa fa-caret-down"></i>
 								</div>
 							</div>

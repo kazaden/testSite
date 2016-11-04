@@ -7,7 +7,7 @@ class ActivityController {
 	
     def activityListBySport() { 
 		def sportName = params.sportName
-		def activityList = Activity.findBySport(sportName)
+		def activityList = Activity.findAllBySport(sportName)
 		
 		render(view: "activityListBySport", model: [activityList: activityList])
 		return

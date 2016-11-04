@@ -5,7 +5,19 @@ class Activity {
 	
 	String sport
 	
+	int duration
+	
+	int minPrice
+
+	String location
+	
+	String guideName
+	
+	String imageSource
+
+	
     static constraints = {
+
     }
 
 }
