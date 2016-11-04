@@ -43,7 +43,7 @@ hors piste" title="ski hors piste">
 			</div>
 			<div id="search-bar-zone">
 				<div id="search-bar" class="secondary-div">
-					<g:form controller="Activity" >
+					<g:form controller="activity" action="activityListBySport" >
 						<div class="row">
 							<div class="col-sm-5 custom-col">
 								<div class="autoCompleteDiv custom-form-field with-icon stretch-width first-elem">
@@ -61,38 +61,12 @@ id="locationName" autocomplete="off">
 									<input type="hidden" name="searchedSportFormattedUrlName" value="" id="searchedSportFormattedUrlName" />
 								</div> -->
 								<div class="custom-form-field with-icon stretch-width">
-									<select name="sportId" class="searchedSport" id="sportId">
-										<option value="">Votre activité</option>
-										<option value="1">Alpinisme</option>
-										<option value="25">Biathlon</option>
-										<option value="18">Canoe-Kayak</option>
-										<option value="12">Canyoning</option>
-										<option value="6">Cascade de glace</option>
-										<option value="15">Chiens de traîneaux</option>
-										<option value="3">Escalade </option>
-										<option value="23">Kitesurf</option>
-										<option value="9">Parapente</option>
-										<option value="20">Rafting</option>
-										<option value="4">Randonnée </option>
-										<option value="16">Randonnée à cheval</option>
-										<option value="11">Randonnée en raquettes </option>
-										<option value="26">Saut en parachute</option>
-										<option value="13">Ski</option>
-										<option value="7">Ski de randonnée</option>
-										<option value="8">Ski nordique</option>
-										<option value="19">Spéléologie</option>
-										<option value="22">Stage de survie</option>
-										<option value="17">Surf</option>
-										<option value="14">Trail</option>
-										<option value="10">Via ferrata </option>
-										<option value="2">Voile</option>
-										<option value="21">VTT</option>
-									</select>
+									<g:select name="sportName" class="searchedSport" from="${["Ski", "Alpinisme"]}"/>
 									<i class="fa fa-caret-down"></i>
 								</div>
 							</div>
 							<div class="col-sm-2 custom-col">
-									<g:submitButton class="btn custom-button solid-yellow stretch-width last-elem" name="ActivitySearch" value="Rechercher" action="activityListBySport"/>
+									<button class="btn custom-button solid-yellow stretch-width last-elem" name="ActivitySearch" type="submit"/>Rechercher</button>
 							</div>
 						</div>
 						<div class="row">

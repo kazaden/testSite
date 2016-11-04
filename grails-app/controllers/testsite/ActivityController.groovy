@@ -6,9 +6,10 @@ class ActivityController {
 
 	
     def activityListBySport() { 
-		render "ok"
-		/* 
-		render(view: "activityListBySport", model: [activityInstanceList: Activite.findBySport(params)])
-		return*/
+		def sportName = params.sportName
+		def activityList = Activity.findBySport(sportName)
+		
+		render(view: "activityListBySport", model: [activityList: activityList])
+		return
 	}
 }

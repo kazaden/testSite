@@ -11,6 +11,6 @@
 
 	</head>
 	<body>
-		<div> Tesssttt</div>
+		<div>${activityList}</div>
 	</body>
 </html>
